@@ -10,7 +10,7 @@ while(guess>0):
         break
     elif (num<number):
         print("Too low")
-    elif (num>number):
+    elif (num>numbwhaer):
         print("Too high")
     guess-=1
 if guess==0:
