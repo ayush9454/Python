@@ -5,8 +5,12 @@ while True:
         continue
     print("Hello joe,What is the password?")
     password=input()
-    while(password!="swordfish"):
-        password=str(input("Access denied, re enter password\n"))
-    print("Access granted")
-    print("sdsd")
+    for i in range(4):
+
+        if(password!="swordfish"):
+            password=str(input("Access denied, re enter password\n"))
+        else:
+            print("Access granted")
+            break
+    #print("sdsd")
     break
