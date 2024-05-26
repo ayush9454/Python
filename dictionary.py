@@ -6,7 +6,7 @@ dict = {
 }
 
 
-for i in dict:
-     print (i)
+# for i in dict:
+    #  print (i)
 
-print(dict.items())
+print(dict.values())
