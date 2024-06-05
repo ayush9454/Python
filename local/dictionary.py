@@ -9,4 +9,5 @@ dict = {
 # for i in dict:
     #  print (i)
 
-print(dict.values())
+print(dict.items())
+print(dict.keys())
