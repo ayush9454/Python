@@ -1,0 +1,4 @@
+import math
+rad=int(input("Enter radius "))
+area=math.pi*rad*rad
+print(area)

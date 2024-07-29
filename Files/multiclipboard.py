@@ -2,17 +2,14 @@ import pyperclip
 import shelve
 import sys
 
-# Define the shelve database file
 shelf_file = 'multiclipboard.db'
 
 def save_clipboard(key):
-    """Save the current clipboard content with the given key."""
     with shelve.open(shelf_file) as clipboard:
         clipboard[key] = pyperclip.paste()
         print(f"Saved clipboard content to key: {key}")
 
 def load_clipboard(key):
-    """Load the content saved under the given key to the clipboard."""
     with shelve.open(shelf_file) as clipboard:
         if key in clipboard:
             pyperclip.copy(clipboard[key])
@@ -21,7 +18,6 @@ def load_clipboard(key):
             print(f"No entry found for key: {key}")
 
 def list_clipboard_keys():
-    """List all keys saved in the clipboard database."""
     with shelve.open(shelf_file) as clipboard:
         keys = list(clipboard.keys())
         if keys:
@@ -32,7 +28,6 @@ def list_clipboard_keys():
             print("No keys found in the clipboard database.")
 
 def delete_clipboard_key(key):
-    """Delete the content saved under the given key."""
     with shelve.open(shelf_file) as clipboard:
         if key in clipboard:
             del clipboard[key]

@@ -1,29 +1,21 @@
-def add_bullets_to_wiki_markup(file_path):
-    try:
-        # Read the content of the file
-        with open(file_path, 'r') as file:
-            lines = file.readlines()
+def add_bullets_to_wiki_markup(wiki_text):
+  
+    lines = wiki_text.split('\n')
+    
+    bulleted_lines = ['* ' + line for line in lines]
+    
+    bulleted_text = '\n'.join(bulleted_lines)
+    
+    return bulleted_text
 
-        # Process each line to add bullets
-        bulleted_lines = []
-        for line in lines:
-            stripped_line = line.strip()
-            if stripped_line and not stripped_line.startswith('*'):
-                bulleted_lines.append(f'* {stripped_line}')
-            else:
-                bulleted_lines.append(line)
+wiki_markup = """
+Item 1
+Item 2
+Item 3
+Item 4
+"""
 
-        # Write the new content back to the file
-        with open(file_path, 'w') as file:
-            file.writelines(bulleted_lines)
+bulleted_wiki_markup = add_bullets_to_wiki_markup(wiki_markup.strip())
 
-        print(f"Bullets added to the wiki markup in {file_path}")
-
-    except FileNotFoundError:
-        print(f"The file {file_path} does not exist.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-# Usage example
-file_path = 'C:\Programming\Python\Files\wiki_markup.txt'
-add_bullets_to_wiki_markup(file_path)
+print("Original Wiki Markup:\n", wiki_markup)
+print("\nBulleted Wiki Markup:\n", bulleted_wiki_markup)
