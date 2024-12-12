@@ -6,10 +6,11 @@ for i in number:
 
 uniq=sorted(set(number))
 print(uniq)
-
 for i in uniq:
-    count=0
-    for j in digit:
-        if([i]==[j]):
-            count +=1
-    print(f"{i} occurs {count} times ")
+    
+# for i in uniq:
+#     count=0
+#     for j in digit:
+#         if([i]==[j]):
+#             count +=1
+#     print(f"{i} occurs {count} times ")
